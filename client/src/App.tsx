@@ -1,10 +1,10 @@
-import { createBrowserRouter,type RouteObject, RouterProvider } from "react-router-dom"
+import {createBrowserRouter, type RouteObject, RouterProvider, useNavigate} from "react-router-dom"
 import ThemeToggle from "./ThemeToggle";
 import './App.css'
 
 const myRoutes : RouteObject[] =[
     {
-        path: '/',
+        path: '/home',
         element: <Home/>
     },
     {
@@ -23,6 +23,9 @@ const myRoutes : RouteObject[] =[
 
 
 function Home() {
+
+    const navigate = useNavigate()
+
     return (
         <>
             <div className="navbar bg-base-100 shadow-sm">
@@ -34,10 +37,26 @@ function Home() {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Homepage</a></li>
-                            <li><a>Books</a></li>
-                            <li><a>Authors</a></li>
-                            <li><a>Genre</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/home'
+                                )
+                            }}>Homepage</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/books'
+                                )
+                            }}>Books</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/authors'
+                                )
+                            }}>Authors</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/genre'
+                                )
+                            }}>Genre</a></li>
                         </ul>
                     </div>
                 </div>
@@ -53,38 +72,97 @@ function Home() {
             </div>
             <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
                 <table className="table">
-                    {/*head*/}
-                        <thead>
-                        <tr>
-                            <th></th>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Genre</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                    {/*row 1*/}
-                        <tr className="hover:bg-base-300">
+                    {/* head */}
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Book</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {/* row 1 */}
+                    <tr className="hover:bg-base-300">
                         <th>1</th>
-                        <td>Cy Ganderton</td>
-                        <td>Ahmed</td>
-                        <td>Comedy</td>
-                        </tr>
-                    {/*row 2*/}
-                        <tr className="hover:bg-base-300">
+                        <td>The Silent River</td>
+                        <td>John Smith</td>
+                        <td>Drama</td>
+                    </tr>
+
+                    {/* row 2 */}
+                    <tr className="hover:bg-base-300">
                         <th>2</th>
-                        <td>Hart Hagerty</td>
-                        <td>Ahmed</td>
-                        <td>Thriller</td>
-                        </tr>
-                    {/*row 3*/}
-                        <tr className="hover:bg-base-300">
+                        <td>Echoes of Time</td>
+                        <td>Emily Carter</td>
+                        <td>Fantasy</td>
+                    </tr>
+
+                    {/* row 3 */}
+                    <tr className="hover:bg-base-300">
                         <th>3</th>
-                        <td>Brice Swyre</td>
-                        <td>Ahmed</td>
+                        <td>Crimson Sky</td>
+                        <td>Noah Davis</td>
+                        <td>Adventure</td>
+                    </tr>
+
+                    {/* row 4 */}
+                    <tr className="hover:bg-base-300">
+                        <th>4</th>
+                        <td>Golden Shadows</td>
+                        <td>Olivia Wilson</td>
+                        <td>Mystery</td>
+                    </tr>
+
+                    {/* row 5 */}
+                    <tr className="hover:bg-base-300">
+                        <th>5</th>
+                        <td>Hidden Storm</td>
+                        <td>Ethan Taylor</td>
+                        <td>Thriller</td>
+                    </tr>
+
+                    {/* row 6 */}
+                    <tr className="hover:bg-base-300">
+                        <th>6</th>
+                        <td>Whispers in the Dark</td>
+                        <td>Ava Miller</td>
+                        <td>Horror</td>
+                    </tr>
+
+                    {/* row 7 */}
+                    <tr className="hover:bg-base-300">
+                        <th>7</th>
+                        <td>Beyond the Edge</td>
+                        <td>Sophia Brown</td>
+                        <td>Science Fiction</td>
+                    </tr>
+
+                    {/* row 8 */}
+                    <tr className="hover:bg-base-300">
+                        <th>8</th>
+                        <td>The Final Chapter</td>
+                        <td>Lucas Moore</td>
+                        <td>Detective</td>
+                    </tr>
+
+                    {/* row 9 */}
+                    <tr className="hover:bg-base-300">
+                        <th>9</th>
+                        <td>Broken Reflections</td>
+                        <td>Mia Anderson</td>
                         <td>Romance</td>
-                        </tr>
-                        </tbody>
+                    </tr>
+
+                    {/* row 10 */}
+                    <tr className="hover:bg-base-300">
+                        <th>10</th>
+                        <td>The Forgotten Path</td>
+                        <td>Liam Johnson</td>
+                        <td>Adventure</td>
+                    </tr>
+                    </tbody>
                 </table>
             </div>
         </>
@@ -92,6 +170,9 @@ function Home() {
 }
 
 function Books() {
+
+    const navigate = useNavigate()
+
     return (
         <>
             <div className="navbar bg-base-100 shadow-sm">
@@ -103,10 +184,26 @@ function Books() {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Homepage</a></li>
-                            <li><a>Books</a></li>
-                            <li><a>Authors</a></li>
-                            <li><a>Genre</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/home'
+                                )
+                            }}>Homepage</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/books'
+                                )
+                            }}>Books</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/authors'
+                                )
+                            }}>Authors</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/genre'
+                                )
+                            }}>Genre</a></li>
                         </ul>
                     </div>
                 </div>
@@ -117,46 +214,122 @@ function Books() {
                     <button className="btn btn-ghost btn-circle">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /> </svg>
                     </button>
-                    <button className="btn btn-ghost btn-circle">
-                        <div className="indicator">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /> </svg>
-                            <span className="badge badge-xs badge-primary indicator-item"></span>
-                        </div>
-                    </button>
+                    <ThemeToggle /> {}
                 </div>
             </div>
             <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
                 <table className="table">
-                    {/*head*/}
+                    {/* head */}
                     <thead>
                     <tr>
                         <th></th>
                         <th>Title</th>
-                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Create date</th>
                         <th>Genre</th>
+                        <th>Author</th>
                     </tr>
                     </thead>
+
                     <tbody>
-                    {/*row 1*/}
+                    {/* row 1 */}
                     <tr className="hover:bg-base-300">
                         <th>1</th>
-                        <td>Cy Ganderton</td>
-                        <td>Ahmed</td>
-                        <td>Comedy</td>
+                        <td>The Silent River</td>
+                        <td>312</td>
+                        <td>2023-03-21</td>
+                        <td>Drama</td>
+                        <td>John Smith</td>
                     </tr>
-                    {/*row 2*/}
+
+                    {/* row 2 */}
                     <tr className="hover:bg-base-300">
                         <th>2</th>
-                        <td>Hart Hagerty</td>
-                        <td>Ahmed</td>
-                        <td>Thriller</td>
+                        <td>Echoes of Time</td>
+                        <td>278</td>
+                        <td>2024-02-09</td>
+                        <td>Fantasy</td>
+                        <td>Emily Carter</td>
                     </tr>
-                    {/*row 3*/}
+
+                    {/* row 3 */}
                     <tr className="hover:bg-base-300">
                         <th>3</th>
-                        <td>Brice Swyre</td>
-                        <td>Ahmed</td>
+                        <td>Crimson Sky</td>
+                        <td>451</td>
+                        <td>2023-10-14</td>
+                        <td>Adventure</td>
+                        <td>Noah Davis</td>
+                    </tr>
+
+                    {/* row 4 */}
+                    <tr className="hover:bg-base-300">
+                        <th>4</th>
+                        <td>Golden Shadows</td>
+                        <td>230</td>
+                        <td>2022-11-05</td>
+                        <td>Mystery</td>
+                        <td>Olivia Wilson</td>
+                    </tr>
+
+                    {/* row 5 */}
+                    <tr className="hover:bg-base-300">
+                        <th>5</th>
+                        <td>Hidden Storm</td>
+                        <td>389</td>
+                        <td>2024-07-19</td>
+                        <td>Thriller</td>
+                        <td>Ethan Taylor</td>
+                    </tr>
+
+                    {/* row 6 */}
+                    <tr className="hover:bg-base-300">
+                        <th>6</th>
+                        <td>Whispers in the Dark</td>
+                        <td>198</td>
+                        <td>2023-08-11</td>
+                        <td>Horror</td>
+                        <td>Ava Miller</td>
+                    </tr>
+
+                    {/* row 7 */}
+                    <tr className="hover:bg-base-300">
+                        <th>7</th>
+                        <td>Beyond the Edge</td>
+                        <td>344</td>
+                        <td>2024-03-28</td>
+                        <td>Science Fiction</td>
+                        <td>Sophia Brown</td>
+                    </tr>
+
+                    {/* row 8 */}
+                    <tr className="hover:bg-base-300">
+                        <th>8</th>
+                        <td>The Final Chapter</td>
+                        <td>265</td>
+                        <td>2023-05-02</td>
+                        <td>Detective</td>
+                        <td>Lucas Moore</td>
+                    </tr>
+
+                    {/* row 9 */}
+                    <tr className="hover:bg-base-300">
+                        <th>9</th>
+                        <td>Broken Reflections</td>
+                        <td>317</td>
+                        <td>2025-01-25</td>
                         <td>Romance</td>
+                        <td>Mia Anderson</td>
+                    </tr>
+
+                    {/* row 10 */}
+                    <tr className="hover:bg-base-300">
+                        <th>10</th>
+                        <td>The Forgotten Path</td>
+                        <td>402</td>
+                        <td>2022-12-16</td>
+                        <td>Adventure</td>
+                        <td>Liam Johnson</td>
                     </tr>
                     </tbody>
                 </table>
@@ -166,14 +339,296 @@ function Books() {
 }
 
 function Authors() {
+
+    const navigate = useNavigate()
+
     return (
-        <div>This is the list of book authors</div>
+        <>
+            <div className="navbar bg-base-100 shadow-sm">
+                <div className="navbar-start">
+                    <div className="dropdown">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/home'
+                                )
+                            }}>Homepage</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/books'
+                                )
+                            }}>Books</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/authors'
+                                )
+                            }}>Authors</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/genre'
+                                )
+                            }}>Genre</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="navbar-center">
+                    <a className="btn-ghost text-xl">Authors</a>
+                </div>
+                <div className="navbar-end">
+                    <button className="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /> </svg>
+                    </button>
+                    <ThemeToggle /> {}
+                </div>
+            </div>
+            <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
+                <table className="table">
+                    {/* head */}
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Create date</th>
+                        <th>Books</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {/* row 1 */}
+                    <tr className="hover:bg-base-300">
+                        <th>1</th>
+                        <td>John Smith</td>
+                        <td>2023-04-18</td>
+                        <td>The Lost Horizon</td>
+                    </tr>
+
+                    {/* row 2 */}
+                    <tr className="hover:bg-base-300">
+                        <th>2</th>
+                        <td>Emily Carter</td>
+                        <td>2024-01-12</td>
+                        <td>Echoes of Time</td>
+                    </tr>
+
+                    {/* row 3 */}
+                    <tr className="hover:bg-base-300">
+                        <th>3</th>
+                        <td>Liam Johnson</td>
+                        <td>2022-10-05</td>
+                        <td>The Silent River</td>
+                    </tr>
+
+                    {/* row 4 */}
+                    <tr className="hover:bg-base-300">
+                        <th>4</th>
+                        <td>Sophia Brown</td>
+                        <td>2023-07-29</td>
+                        <td>Beyond the Edge</td>
+                    </tr>
+
+                    {/* row 5 */}
+                    <tr className="hover:bg-base-300">
+                        <th>5</th>
+                        <td>Noah Davis</td>
+                        <td>2024-09-21</td>
+                        <td>Crimson Sky</td>
+                    </tr>
+
+                    {/* row 6 */}
+                    <tr className="hover:bg-base-300">
+                        <th>6</th>
+                        <td>Olivia Wilson</td>
+                        <td>2022-11-11</td>
+                        <td>Golden Shadows</td>
+                    </tr>
+
+                    {/* row 7 */}
+                    <tr className="hover:bg-base-300">
+                        <th>7</th>
+                        <td>Ethan Taylor</td>
+                        <td>2023-02-04</td>
+                        <td>Hidden Storm</td>
+                    </tr>
+
+                    {/* row 8 */}
+                    <tr className="hover:bg-base-300">
+                        <th>8</th>
+                        <td>Ava Miller</td>
+                        <td>2024-06-15</td>
+                        <td>Whispers in the Dark</td>
+                    </tr>
+
+                    {/* row 9 */}
+                    <tr className="hover:bg-base-300">
+                        <th>9</th>
+                        <td>Lucas Moore</td>
+                        <td>2023-09-10</td>
+                        <td>The Final Chapter</td>
+                    </tr>
+
+                    {/* row 10 */}
+                    <tr className="hover:bg-base-300">
+                        <th>10</th>
+                        <td>Mia Anderson</td>
+                        <td>2025-03-27</td>
+                        <td>Broken Reflections</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </>
     );
 }
 
 function Genre() {
+
+    const navigate = useNavigate()
+
     return (
-        <div>This is the list of book genre</div>
+        <>
+            <div className="navbar bg-base-100 shadow-sm">
+                <div className="navbar-start">
+                    <div className="dropdown">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/home'
+                                )
+                            }}>Homepage</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/books'
+                                )
+                            }}>Books</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/authors'
+                                )
+                            }}>Authors</a></li>
+                            <li><a onClick={() => {
+                                navigate(
+                                    '/genre'
+                                )
+                            }}>Genre</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="navbar-center">
+                    <a className="btn-ghost text-xl">Genre</a>
+                </div>
+                <div className="navbar-end">
+                    <button className="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /> </svg>
+                    </button>
+                    <ThemeToggle /> {}
+                </div>
+            </div>
+            <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
+                <table className="table">
+                    {/* head */}
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Genre</th>
+                        <th>Create date</th>
+                        <th>Books</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {/* row 1 */}
+                    <tr className="hover:bg-base-300">
+                        <th>1</th>
+                        <td>Adventure</td>
+                        <td>2023-06-10</td>
+                        <td>Crimson Sky, The Forgotten Path</td>
+                    </tr>
+
+                    {/* row 2 */}
+                    <tr className="hover:bg-base-300">
+                        <th>2</th>
+                        <td>Romance</td>
+                        <td>2024-02-22</td>
+                        <td>Broken Reflections</td>
+                    </tr>
+
+                    {/* row 3 */}
+                    <tr className="hover:bg-base-300">
+                        <th>3</th>
+                        <td>Drama</td>
+                        <td>2022-09-18</td>
+                        <td>The Silent River</td>
+                    </tr>
+
+                    {/* row 4 */}
+                    <tr className="hover:bg-base-300">
+                        <th>4</th>
+                        <td>Fantasy</td>
+                        <td>2023-04-14</td>
+                        <td>Echoes of Time</td>
+                    </tr>
+
+                    {/* row 5 */}
+                    <tr className="hover:bg-base-300">
+                        <th>5</th>
+                        <td>Science Fiction</td>
+                        <td>2023-08-27</td>
+                        <td>Beyond the Edge</td>
+                    </tr>
+
+                    {/* row 6 */}
+                    <tr className="hover:bg-base-300">
+                        <th>6</th>
+                        <td>Thriller</td>
+                        <td>2024-05-19</td>
+                        <td>Hidden Storm</td>
+                    </tr>
+
+                    {/* row 7 */}
+                    <tr className="hover:bg-base-300">
+                        <th>7</th>
+                        <td>Detective</td>
+                        <td>2022-11-30</td>
+                        <td>The Final Chapter</td>
+                    </tr>
+
+                    {/* row 8 */}
+                    <tr className="hover:bg-base-300">
+                        <th>8</th>
+                        <td>Mystery</td>
+                        <td>2023-03-05</td>
+                        <td>Golden Shadows</td>
+                    </tr>
+
+                    {/* row 9 */}
+                    <tr className="hover:bg-base-300">
+                        <th>9</th>
+                        <td>Horror</td>
+                        <td>2024-07-08</td>
+                        <td>Whispers in the Dark</td>
+                    </tr>
+
+                    {/* row 10 */}
+                    <tr className="hover:bg-base-300">
+                        <th>10</th>
+                        <td>Historical</td>
+                        <td>2025-01-02</td>
+                        <td>The Last Empire</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </>
     );
 }
 
