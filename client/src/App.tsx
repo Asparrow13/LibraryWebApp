@@ -1,4 +1,5 @@
 import { createBrowserRouter,type RouteObject, RouterProvider } from "react-router-dom"
+import ThemeToggle from "./ThemeToggle";
 import './App.css'
 
 const myRoutes : RouteObject[] =[
@@ -24,6 +25,32 @@ const myRoutes : RouteObject[] =[
 function Home() {
     return (
         <>
+            <div className="navbar bg-base-100 shadow-sm">
+                <div className="navbar-start">
+                    <div className="dropdown">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a>Homepage</a></li>
+                            <li><a>Books</a></li>
+                            <li><a>Authors</a></li>
+                            <li><a>Genre</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="navbar-center">
+                    <a className="btn-ghost text-xl">Home</a>
+                </div>
+                <div className="navbar-end">
+                    <button className="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /> </svg>
+                    </button>
+                    <ThemeToggle /> {}
+                </div>
+            </div>
             <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
                 <table className="table">
                     {/*head*/}
@@ -58,69 +85,83 @@ function Home() {
                         <td>Romance</td>
                         </tr>
                         </tbody>
-                        </table>
-                        </div>    </>
-                        );
+                </table>
+            </div>
+        </>
+    );
 }
 
 function Books() {
     return (
-        <ul className="list bg-base-100 rounded-box shadow-md">
-
-            <li className="p-4 pb-2 text-xs opacity-60 tracking-wide">Most played songs this week</li>
-
-            <li className="list-row">
-                <div><img className="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/1@94.webp"/></div>
-                <div>
-                    <div>Dio Lupa</div>
-                    <div className="text-xs uppercase font-semibold opacity-60">Remaining Reason</div>
+        <>
+            <div className="navbar bg-base-100 shadow-sm">
+                <div className="navbar-start">
+                    <div className="dropdown">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a>Homepage</a></li>
+                            <li><a>Books</a></li>
+                            <li><a>Authors</a></li>
+                            <li><a>Genre</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <p className="list-col-wrap text-xs">
-                    "Remaining Reason" became an instant hit, praised for its haunting sound and emotional depth. A viral performance brought it widespread recognition, making it one of Dio Lupa’s most iconic tracks.
-                </p>
-                <button className="btn btn-square btn-ghost">
-                    <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><path d="M6 3L20 12 6 21 6 3z"></path></g></svg>
-                </button>
-                <button className="btn btn-square btn-ghost">
-                    <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></g></svg>
-                </button>
-            </li>
-
-            <li className="list-row">
-                <div><img className="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/4@94.webp"/></div>
-                <div>
-                    <div>Ellie Beilish</div>
-                    <div className="text-xs uppercase font-semibold opacity-60">Bears of a fever</div>
+                <div className="navbar-center">
+                    <a className="btn-ghost text-xl">Books</a>
                 </div>
-                <p className="list-col-wrap text-xs">
-                    "Bears of a Fever" captivated audiences with its intense energy and mysterious lyrics. Its popularity skyrocketed after fans shared it widely online, earning Ellie critical acclaim.
-                </p>
-                <button className="btn btn-square btn-ghost">
-                    <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><path d="M6 3L20 12 6 21 6 3z"></path></g></svg>
-                </button>
-                <button className="btn btn-square btn-ghost">
-                    <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></g></svg>
-                </button>
-            </li>
-
-            <li className="list-row">
-                <div><img className="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/3@94.webp"/></div>
-                <div>
-                    <div>Sabrino Gardener</div>
-                    <div className="text-xs uppercase font-semibold opacity-60">Cappuccino</div>
+                <div className="navbar-end">
+                    <button className="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /> </svg>
+                    </button>
+                    <button className="btn btn-ghost btn-circle">
+                        <div className="indicator">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /> </svg>
+                            <span className="badge badge-xs badge-primary indicator-item"></span>
+                        </div>
+                    </button>
                 </div>
-                <p className="list-col-wrap text-xs">
-                    "Cappuccino" quickly gained attention for its smooth melody and relatable themes. The song’s success propelled Sabrino into the spotlight, solidifying their status as a rising star.
-                </p>
-                <button className="btn btn-square btn-ghost">
-                    <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><path d="M6 3L20 12 6 21 6 3z"></path></g></svg>
-                </button>
-                <button className="btn btn-square btn-ghost">
-                    <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></g></svg>
-                </button>
-            </li>
-
-        </ul>
+            </div>
+            <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
+                <table className="table">
+                    {/*head*/}
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {/*row 1*/}
+                    <tr className="hover:bg-base-300">
+                        <th>1</th>
+                        <td>Cy Ganderton</td>
+                        <td>Ahmed</td>
+                        <td>Comedy</td>
+                    </tr>
+                    {/*row 2*/}
+                    <tr className="hover:bg-base-300">
+                        <th>2</th>
+                        <td>Hart Hagerty</td>
+                        <td>Ahmed</td>
+                        <td>Thriller</td>
+                    </tr>
+                    {/*row 3*/}
+                    <tr className="hover:bg-base-300">
+                        <th>3</th>
+                        <td>Brice Swyre</td>
+                        <td>Ahmed</td>
+                        <td>Romance</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </>
     );
 }
 
@@ -138,11 +179,6 @@ function Genre() {
 
 function App() {
   return <RouterProvider router = {createBrowserRouter(myRoutes)} />
-
-
-  /*
-
-  */
 }
 
 export default App
